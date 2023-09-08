@@ -110,7 +110,6 @@ class ViewController: UIViewController {
                 if currentNumber != 0 {
                     currentNumber = previousNumber / currentNumber
                 } else {
-                    // Ошибка: деление на ноль
                     displayLabel.text = "Error"
                     resetCalculator()
                     return
