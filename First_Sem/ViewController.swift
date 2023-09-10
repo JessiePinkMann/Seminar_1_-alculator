@@ -67,6 +67,16 @@ class ViewController: UIViewController {
                 updateDisplay()
                 isFinishedTypingNumber = true
                 return
+            case "%":
+                if operation != nil {
+                    currentNumber = (previousNumber * currentNumber) / 100
+                    performOperation()
+                } else {
+                    currentNumber /= 100
+                    updateDisplay()
+                }
+                isFinishedTypingNumber = true
+                return
             default:
                 break
             }
@@ -114,6 +124,8 @@ class ViewController: UIViewController {
                     resetCalculator()
                     return
                 }
+            case "%":
+                currentNumber = (previousNumber * currentNumber) / 100
             default:
                 break
             }
@@ -123,6 +135,7 @@ class ViewController: UIViewController {
             displayLabel.text = isInteger ? String(format: "%.0f", doubleValue) : String(format: "%.4f", doubleValue)
         }
     }
+
     
     private func updateDisplay() {
         let formatter = NumberFormatter()
