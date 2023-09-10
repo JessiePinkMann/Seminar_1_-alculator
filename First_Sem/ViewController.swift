@@ -70,7 +70,8 @@ class ViewController: UIViewController {
             case "%":
                 if operation != nil {
                     currentNumber = (previousNumber * currentNumber) / 100
-                    performOperation()
+                    updateDisplay()
+                    isNewOperation = false
                 } else {
                     currentNumber /= 100
                     updateDisplay()
@@ -124,8 +125,6 @@ class ViewController: UIViewController {
                     resetCalculator()
                     return
                 }
-            case "%":
-                currentNumber = (previousNumber * currentNumber) / 100
             default:
                 break
             }
