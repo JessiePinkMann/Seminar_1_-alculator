@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  First_Sem
-//
-//  Created by Egor Anoshin on 05.09.2023.
-//
 
 import UIKit
 
